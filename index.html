@@ -3,124 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Animated Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login</title>
 
-        <style>
-            /* ----------- Animated Background ----------- */
-            body {
-                margin: 0;
-                height: 100vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background: linear-gradient(120deg, #4a00e0, #8e2de2, #0f0c29);
-                background-size: 400% 400%;
-                animation: gradientBG 12s ease infinite;
-                font-family: Arial, sans-serif;
-            }
-
-            @keyframes gradientBG {
-                0% {
-                    background-position: 0% 50%;
-                }
-
-                50% {
-                    background-position: 100% 50%;
-                }
-
-                100% {
-                    background-position: 0% 50%;
-                }
-            }
-
-            /* ----------- Login Form Card ----------- */
-            .card {
-                background: rgba(255, 255, 255, 0.15);
-                padding: 25px;
-                width: 320px;
-                border-radius: 15px;
-                backdrop-filter: blur(10px);
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-                color: white;
-                animation: fadeIn 1s ease;
-            }
-
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            input {
-                width: 100%;
-                padding: 10px;
-                border-radius: 8px;
-                border: none;
-                margin-top: 10px;
-                outline: none;
-            }
-
-            button {
-                width: 100%;
-                padding: 12px;
-                border-radius: 8px;
-                border: none;
-                margin-top: 15px;
-                background: #ffb300;
-                color: #000;
-                font-weight: bold;
-                cursor: pointer;
-            }
-
-            button:hover {
-                background: #ffca28;
-            }
-
-            /* Password Eye Icon */
-            .password-box {
-                position: relative;
-            }
-
-            .eye-icon {
-                position: absolute;
-                right: 10px;
-                top: 43px;
-                cursor: pointer;
-                color: black;
-            }
-
-            /* Congratulation Card */
-            #congratsCard {
-                display: none;
-                background: rgba(255, 255, 255, 0.20);
-                padding: 25px;
-                width: 340px;
-                border-radius: 15px;
-                text-align: center;
-                backdrop-filter: blur(10px);
-                animation: popIn 0.8s ease;
-                color: white;
-            }
-
-            @keyframes popIn {
-                0% {
-                    transform: scale(0.5);
-                    opacity: 0;
-                }
-
-                100% {
-                    transform: scale(1);
-                    opacity: 1;
-                }
-            }
-        </style>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -146,67 +33,12 @@
         <h2 id="congratsText"></h2>
         <h1>🎉🥳🎈</h1>
 
-        <!-- NEW HOME BUTTON -->
+        <!-- HOME BUTTON -->
         <button onclick="goHome()">Home / Input Again</button>
     </div>
 
-
-    <script>
-        // ----------- Show/Hide Password -----------
-        function togglePassword() {
-            let pass = document.getElementById("password");
-            pass.type = pass.type === "password" ? "text" : "password";
-        }
-
-        // ----------- Validate Password -----------
-        function validatePassword(pwd) {
-            const hasLower = /[a-z]/.test(pwd);
-            const hasUpper = /[A-Z]/.test(pwd);
-            const hasDigit = /\d/.test(pwd);
-            const minLength = pwd.length >= 6;
-
-            return hasLower && hasUpper && hasDigit && minLength;
-        }
-
-        // ----------- On Form Submit -----------
-        function submitForm() {
-            let user = document.getElementById("username").value.trim();
-            let pass = document.getElementById("password").value;
-            let errorBox = document.getElementById("errorMsg");
-
-            if (user === "") {
-                errorBox.innerHTML = "❌ Username cannot be empty.";
-                return;
-            }
-
-            if (!validatePassword(pass)) {
-                errorBox.innerHTML =
-                    "❌ Password must contain: lowercase, uppercase, number, and at least 6 characters.";
-                return;
-            }
-
-            // Hide form + Show Congratulations
-            document.getElementById("loginCard").style.display = "none";
-            document.getElementById("congratsCard").style.display = "block";
-
-            // Display username only
-            document.getElementById("congratsText").innerHTML =
-                `🎉 Congratulations <b>${user}</b>! You have successfully logged in! 🎉`;
-        }
-
-        // ----------- Return to Home / Input Again -----------
-        function goHome() {
-            // Show the login form again
-            document.getElementById("loginCard").style.display = "block";
-            document.getElementById("congratsCard").style.display = "none";
-
-            // Clear all inputs
-            document.getElementById("username").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("password").value = "";
-            document.getElementById("errorMsg").innerHTML = "";
-        }
-    </script>
+    <!-- Link JS -->
+    <script src="script.js"></script>
 
 </body>
 
