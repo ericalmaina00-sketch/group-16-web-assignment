@@ -1,0 +1,91 @@
+/* ----------- Animated Background ----------- */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #4a00e0, #8e2de2, #0f0c29);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    font-family: Arial, sans-serif;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ----------- Login Form Card ----------- */
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    width: 320px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    color: white;
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 15px;
+    background: #ffb300;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffca28;
+}
+
+/* Password Eye Icon */
+.password-box {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 43px;
+    cursor: pointer;
+    color: black;
+}
+
+/* Congratulation Card */
+#congratsCard {
+    display: none;
+    background: rgba(255, 255, 255, 0.20);
+    padding: 25px;
+    width: 340px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: popIn 0.8s ease;
+    color: white;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
