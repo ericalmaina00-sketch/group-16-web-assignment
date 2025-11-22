@@ -12,9 +12,17 @@ body {
 }
 
 @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* ----------- Login Form Card ----------- */
@@ -24,14 +32,21 @@ body {
     width: 320px;
     border-radius: 15px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     color: white;
     animation: fadeIn 1s ease;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 input {
@@ -41,8 +56,10 @@ input {
     border: none;
     margin-top: 10px;
     outline: none;
+    font-size: 15px;
 }
 
+/* ----------- Buttons ----------- */
 button {
     width: 100%;
     padding: 12px;
@@ -53,26 +70,30 @@ button {
     color: #000;
     font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
     background: #ffca28;
 }
 
-/* Password Eye Icon */
+/* ----------- Password Eye Icon (INSIDE TEXTBOX) ----------- */
 .password-box {
     position: relative;
 }
 
 .eye-icon {
     position: absolute;
-    right: 10px;
-    top: 43px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
     color: black;
+    font-size: 18px;
+    user-select: none;
 }
 
-/* Congratulation Card */
+/* ----------- Congratulation Card ----------- */
 #congratsCard {
     display: none;
     background: rgba(255, 255, 255, 0.20);
@@ -86,6 +107,13 @@ button:hover {
 }
 
 @keyframes popIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
