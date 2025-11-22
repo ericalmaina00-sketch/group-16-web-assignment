@@ -1,7 +1,15 @@
-// ----------- Show/Hide Password -----------
+// ----------- Show/Hide Password + Change Icon -----------
 function togglePassword() {
     let pass = document.getElementById("password");
-    pass.type = pass.type === "password" ? "text" : "password";
+    let eye = document.querySelector(".eye-icon");
+
+    if (pass.type === "password") {
+        pass.type = "text";
+        eye.textContent = "👁️"; // open eye
+    } else {
+        pass.type = "password";
+        eye.textContent = "🙈"; // closed eye
+    }
 }
 
 // ----------- Validate Password -----------
@@ -51,4 +59,10 @@ function goHome() {
     document.getElementById("email").value = "";
     document.getElementById("password").value = "";
     document.getElementById("errorMsg").innerHTML = "";
+
+    // Reset eye icon to closed state
+    document.querySelector(".eye-icon").textContent = "🙈";
+
+    // Reset password field to hidden
+    document.getElementById("password").type = "password";
 }
